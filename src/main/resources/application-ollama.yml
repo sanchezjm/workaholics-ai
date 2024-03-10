@@ -1,0 +1,13 @@
+langchain4j:
+  ollama:
+    chat-model:
+      base-url: http://localhost:11434
+      model-name: mistral:instruct
+      temperature: 0.0
+      timeout: PT60S
+#    embedding-model:
+      #base-url: http://localhost:11434
+      #model-name: mistral:instruct
+      #timeout: PT60S
+
+logging.level.dev.langchain4j: DEBUG
