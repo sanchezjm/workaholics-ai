@@ -12,11 +12,11 @@ public class LocalAiConfig {
     @Bean
     @ConditionalOnProperty("langchain4j.local-ai.chat-model.base-url")
     ChatLanguageModel openAiChatModel(LocalAiProperties properties) {
-        final ChatModelProperties chatModelProperties = properties.getChatModel();
+        final ChatModelProperties chatModelProperties = properties.chatModel();
         return LocalAiChatModel.builder()
-                .baseUrl(chatModelProperties.getBaseUrl())
-                .modelName(chatModelProperties.getModelName())
-                .temperature(chatModelProperties.getTemperature())
+                .baseUrl(chatModelProperties.baseUrl())
+                .modelName(chatModelProperties.modelName())
+                .temperature(chatModelProperties.temperature())
                 .logRequests(true)
                 .logResponses(true)
                 .build();

@@ -1,20 +1,15 @@
 package com.izertis.ai.workaholics.config.localai;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.Duration;
 
-@Getter
-@Setter
-public class ChatModelProperties {
+public record ChatModelProperties (
 
-    String baseUrl;
+    String baseUrl,
 
-    String modelName;
+    String modelName,
 
-    Double temperature;
+    Double temperature,
 
-    Duration timeout;
+    Duration timeout
 
-}
+){}

@@ -12,14 +12,12 @@ import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.Optional;
 
 @Component
-@Slf4j
 public class WorkaholicsAuthorsWebCrawler {
 
     public static final int MAX_SEGMENT_SIZE = 100;
@@ -51,7 +49,6 @@ public class WorkaholicsAuthorsWebCrawler {
     }
 
     private void ingestByUrl(String url) {
-        log.info("ingesting {} ", url);
         final Document document = UrlDocumentLoader.load(url, new TextDocumentParser());
         final Document documentTransformed = transformer.transform(document);
         documentTransformed.metadata().add("url", url);
